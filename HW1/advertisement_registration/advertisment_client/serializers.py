@@ -6,4 +6,4 @@ from .models import *
 class AdvertisementSerializer(serializers.ModelSerializer):
     class Meta:
         model = Advertisement
-        exclude = ('state',)
+        exclude = ('state','category')

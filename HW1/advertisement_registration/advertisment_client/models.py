@@ -10,7 +10,7 @@ class Advertisement(models.Model):
     id=models.AutoField(primary_key=True)
     description = models.CharField(max_length=200)
     email = models.EmailField()
-    category=models.CharField(max_length=50)
+    category=models.CharField(max_length=50,blank=True,null=True)
     state=models.CharField(max_length=50,choices=choices.choices,default=choices.pending)
     image = models.ImageField(upload_to='images/')
 
