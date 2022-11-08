@@ -80,6 +80,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'corsheaders',
+    'advertisment_client',
     'rest_framework_simplejwt.token_blacklist',
     
 ]
