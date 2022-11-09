@@ -17,4 +17,4 @@ class AddAddvertismentView(generics.CreateAPIView):
             data=serialzer.data
             add_id=data['id']
             return Response({"message": f"your advertisment submited with id {add_id}"} ,status=status.HTTP_201_CREATED)
-        return Response({"message":"Please complete form correctly"},status=status.HTTP_400_BAD_REQUEST)
+        return Response({"message":"Please complete form correctly"},status=status.htt)
