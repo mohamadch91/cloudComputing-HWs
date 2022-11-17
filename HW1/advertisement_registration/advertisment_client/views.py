@@ -11,8 +11,14 @@ class AddAddvertismentView(generics.CreateAPIView):
     serializer_class=AddAdvertismentSerializer
     queryset=Advertisement.objects.all()
     def post(self,request):
-        print(request.data)
-        serialzer=AdvertisementSerializer(data=request.data)
+        #inja dadm be abr arvan
+        # url="askasl;dkja"
+        new_data={
+            "image":url,
+            "description":request.data["description"],
+            "email":request.data["email"]
+        }
+        serialzer=AdvertisementSerializer(data=new_data)
         if(serialzer.is_valid()):
             serialzer.save()
             data=serialzer.data
