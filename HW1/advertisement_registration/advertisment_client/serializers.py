@@ -6,8 +6,7 @@ from .models import *
 class AdvertisementSerializer(serializers.ModelSerializer):
     class Meta:
         model = Advertisement
-        exclude = ('state','category')
-
+        fields = '__all__'
 class AddAdvertismentSerializer(serializers.Serializer):
     description = serializers.CharField(max_length=200)
     email = serializers.EmailField()

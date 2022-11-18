@@ -40,6 +40,7 @@ class GetAddvertismentView(generics.RetrieveAPIView):
     def get(self,request,id):
         add=get_object_or_404(Advertisement,id=id)
         serialzer=AdvertisementSerializer(add)
+        print(serialzer.data)
         data=serialzer.data
         if(data['state']=="accepted"):
             return Response(data,status=status.HTTP_200_OK)
