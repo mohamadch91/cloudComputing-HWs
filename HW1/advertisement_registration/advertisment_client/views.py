@@ -39,6 +39,14 @@ class GetAddvertismentView(generics.RetrieveAPIView):
     queryset=Advertisement.objects.all()
     def get(self,request,id):
         add=get_object_or_404(Advertisement,id=id)
+
         serialzer=AdvertisementSerializer(add)
-        return Response(serialzer.data,status=status.HTTP_200_OK)
+        data=serialzer.data
+        if(data['state']=="accepted"):
+            return Response(data,status=status.HTTP_200_OK)
+        elif (data['state']=="pending"):
+            return Response({"message":"your advertisment is pending"},status=status.HTTP_202_ACCEPTED)
+        else:
+            return Response({"message":"your advertisment is rejected"},status=status.HTTP_403_FORBIDDEN)
+
     
