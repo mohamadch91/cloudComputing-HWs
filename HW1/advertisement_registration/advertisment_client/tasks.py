@@ -535,6 +535,16 @@ temp_data={
     "type": "success"
   }
 }
+
+def send_simple_message(message):
+	return requests.post(
+		"https://api.mailgun.net/v3/sandbox094d96c69abf48f980bb338921d399fd.mailgun.org/messages",
+		auth=("api", "95dbfb630c67c77ea3ab2c439bc559b6-2de3d545-d58ccc46"),
+		data={"from": "Excited User <mailgun@sandbox094d96c69abf48f980bb338921d399fd.mailgun.org>",
+			"to": ["mohamadchoupan80@gmail.com","mohamadchoupan94@gmail.com"],
+			"subject": "Advertisment APP",
+			"text": message})
+
 @shared_task
 def second_service_task(id):
     #get advertisment image from s3
@@ -562,11 +572,17 @@ def second_service_task(id):
         advertisment=Advertisement.objects.get(id=id)
         advertisment.state="accepted"
         advertisment.save()
+        message="Advertisment with id "+str(id)+" is accepted"
+        send_simple_message(message)
     if(max_confidence==0):
         advertisment=Advertisement.objects.get(id=id)
         advertisment.state="rejected"
         advertisment.save()
-        
+        message="Advertisment with id "+str(id)+" is rejected"
+        send_simple_message(message)
+    
+    
+
         
 
         ## send advertisment to second service
