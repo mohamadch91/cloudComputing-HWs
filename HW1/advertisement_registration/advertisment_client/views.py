@@ -32,3 +32,13 @@ class AddAddvertismentView(generics.CreateAPIView):
                 return Response({"message": "something went wrong"} ,status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         # print(serialzer.errors)
         return Response({"message":"Please complete form correctly"},status=status.HTTP_400_BAD_REQUEST)
+
+# Get advertisment with id API
+class GetAddvertismentView(generics.RetrieveAPIView):
+    serializer_class=AdvertisementSerializer
+    queryset=Advertisement.objects.all()
+    def get(self,request,id):
+        add=get_object_or_404(Advertisement,id=id)
+        serialzer=AdvertisementSerializer(add)
+        return Response(serialzer.data,status=status.HTTP_200_OK)
+    
