@@ -26,7 +26,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-m!s*e^%fm3f59%i4_z+3qw!%==f$d)lc&g(q0!dstw4)9&q!c9'
-CELERY_BROKER_URL = 'amqp://localhost'
+CELERY_BROKER_URL = "amqps://ncjjaxks:jLMl2Au8Mf3gQpntHV8IyfMGx7_HwBDt@turkey.rmq.cloudamqp.com/ncjjaxks"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 # ACCOUNT_USER_MODEL_USERNAME_FIELD = None
