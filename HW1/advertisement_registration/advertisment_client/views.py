@@ -21,7 +21,7 @@ class AddAddvertismentView(generics.CreateAPIView):
             serialzer.save()
             data=serialzer.data
             add_id=data['id']
-            file=request.Files['image']
+            file=request.data['image']
             url=upload_to_server(file,add_id)
             if(url):
                 add=Advertisement.objects.get(id=add_id)
@@ -39,7 +39,6 @@ class GetAddvertismentView(generics.RetrieveAPIView):
     queryset=Advertisement.objects.all()
     def get(self,request,id):
         add=get_object_or_404(Advertisement,id=id)
-
         serialzer=AdvertisementSerializer(add)
         data=serialzer.data
         if(data['state']=="accepted"):

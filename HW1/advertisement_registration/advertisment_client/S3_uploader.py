@@ -15,18 +15,21 @@ def upload_to_server(file,id):
         )
 
     except Exception as exc:
+        print("inja")
         logging.error(exc)
     else:
         try:
             bucket = s3_resource.Bucket('cloud-hw')
             bucket.put_object(
-                    ACL='public',
+                    ACL='public-read',
                     Body=file,
-                    Key=id
+                    Key=str(id)+".jpg",
                 )
             return True
         except ClientError as e:
+            print("na innja")
             logging.error(e)
 
 def s3_url():
     return "https://cloud-hw.s3.ir-thr-at1.arvanstorage.com/"
+
