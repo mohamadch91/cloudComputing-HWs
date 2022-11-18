@@ -3,29 +3,26 @@ import logging
 from botocore.exceptions import ClientError
 
 # Configure logging
-logging.basicConfig(level=logging.INFO)
+def upload_to_server(file,id):
+    logging.basicConfig(level=logging.INFO)
 
-try:
-    s3_resource = boto3.resource(
-        's3',
-        endpoint_url='endpoint_url',
-        aws_access_key_id='access_key',
-        aws_secret_access_key='secret_key'
-    )
-
-except Exception as exc:
-    logging.error(exc)
-else:
     try:
-        bucket = s3_resource.Bucket('bucket-name')
-        file_path = 'the/abs/path/to/file.txt'
-        object_name = 'file.txt'
+        s3_resource = boto3.resource(
+            's3',
+            endpoint_url='https://s3.ir-thr-at1.arvanstorage.com',
+            aws_access_key_id='57cbf04d-38dc-4ab4-817a-7f232aead7f1',
+            aws_secret_access_key='4758e835ebedf4818de354c5db7b35c979b100b9'
+        )
 
-        with open(file_path, "rb") as file:
+    except Exception as exc:
+        logging.error(exc)
+    else:
+        try:
+            bucket = s3_resource.Bucket('cloud-hw')
             bucket.put_object(
-                ACL='private',
-                Body=file,
-                Key=object_name
-            )
-    except ClientError as e:
-        logging.error(e)
+                    ACL='private',
+                    Body=file,
+                    Key=id
+                )
+        except ClientError as e:
+            logging.error(e)

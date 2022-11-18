@@ -12,7 +12,6 @@ class AddAddvertismentView(generics.CreateAPIView):
     queryset=Advertisement.objects.all()
     def post(self,request):
         #inja dadm be abr arvan
-        # url="askasl;dkja"
         new_data={
             "image":url,
             "description":request.data["description"],
