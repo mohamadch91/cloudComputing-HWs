@@ -20,9 +20,13 @@ def upload_to_server(file,id):
         try:
             bucket = s3_resource.Bucket('cloud-hw')
             bucket.put_object(
-                    ACL='private',
+                    ACL='public',
                     Body=file,
                     Key=id
                 )
+            return True
         except ClientError as e:
             logging.error(e)
+
+def s3_url():
+    return "https://cloud-hw.s3.ir-thr-at1.arvanstorage.com/"
