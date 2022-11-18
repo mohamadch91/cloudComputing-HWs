@@ -5,7 +5,9 @@ from django.shortcuts import get_object_or_404
 from rest_framework import generics
 from .models import Advertisement
 from .serializers import AdvertisementSerializer,AddAdvertismentSerializer
-from .S3_uploader import upload_to_server,s3_url
+from .S3_helper import upload_to_server,s3_url
+import requests
+from .tasks import second_service_task
 # Create new advertisment API
 class AddAddvertismentView(generics.CreateAPIView):
     serializer_class=AddAdvertismentSerializer
@@ -27,6 +29,11 @@ class AddAddvertismentView(generics.CreateAPIView):
                 add=Advertisement.objects.get(id=add_id)
                 add.image=s3_url()+str(add_id)
                 add.save()
+                response = requests.get(
+                'https://api.imagga.com/v2/tags?image_url=%s' % url,
+                        auth=(IMG_KEY, IMG_SECRET_KEY))
+                data=response.json()
+                # second_service_task.delay(add_id)
                 return Response({"message": f"your advertisment submited with id {add_id}"} ,status=status.HTTP_201_CREATED)
             else:
                 return Response({"message": "something went wrong"} ,status=status.HTTP_500_INTERNAL_SERVER_ERROR)
