@@ -19,7 +19,7 @@ def second_service_task(id):
     ## get advertisment image from s3
     url=create_image_url(id)
     response = requests.get(
-    'https://api.imagga.com/v2/tags?image_url=%s' % url,
+    IMG_ENDPOINT+'/v2/tags?image_url=%s' % url,
             auth=(IMG_KEY, IMG_SECRET_KEY))
     data=response.json()
 
