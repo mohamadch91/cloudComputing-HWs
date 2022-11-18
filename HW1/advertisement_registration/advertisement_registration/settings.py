@@ -133,8 +133,8 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240
 #         'NAME': 'tls_db',
 #         'USER': 'postgres',
 #         'PASSWORD': 'fdhdkj@33443',
-#         'HOST': 'localhost',
-#         'PORT': '',
+#         'HOST': 'runflare',
+#         'PORT': '5432',
 # }
 # }
 DATABASES = {
