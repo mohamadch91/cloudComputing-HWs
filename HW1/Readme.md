@@ -16,9 +16,10 @@ and in the sprate terminal run the following command:
 
 Service is running on port 8000.
 you can open the following link to see the service:
-http://localhost:8000/advertisment/add
-or 
-http://localhost:8000/advertisment/get/<id>
+on your local machine:
+1. Add new advertisment: 
+    1. [Add new advertisement](http://localhost:8000/advertisment/add)
+    2. [Get advertisement with id](http://localhost:8000/advertisment/get/1)
 ## 1.2
 ### We use 5 cloud services in this project:
 1. S3 for storing static files
