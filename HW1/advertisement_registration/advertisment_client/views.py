@@ -9,8 +9,7 @@ from .S3_helper import upload_to_server,s3_url
 import requests
 from .tasks import second_service_task
 # Create new advertisment API
-IMG_KEY="acc_90ccaadfac4bca7"
-IMG_SECRET_KEY="daee709507bb27b5756e6dfac46b5222"
+
 class AddAddvertismentView(generics.CreateAPIView):
     serializer_class=AddAdvertismentSerializer
     queryset=Advertisement.objects.all()
