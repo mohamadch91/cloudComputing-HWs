@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework import generics
 from .models import Advertisement
 from .serializers import AdvertisementSerializer,AddAdvertismentSerializer
-from .S3_helper import upload_to_server,s3_url
+from .S3_helper import upload_to_server,create_image_url
 import requests
 from .tasks import second_service_task
 # Create new advertisment API
@@ -34,7 +34,7 @@ class AddAddvertismentView(generics.CreateAPIView):
             #update the url in the database
             if(url):
                 add=Advertisement.objects.get(id=add_id)
-                add.image=s3_url()+str(add_id)+".jpg"
+                add.image=create_image_url(add_id)
                 add.save()
                 #call the second service from celery
                 second_service_task.delay(add_id)
