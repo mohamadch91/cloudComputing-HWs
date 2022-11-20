@@ -9,7 +9,7 @@ IMG_ENDPOINT="https://api.imagga.com"
 MAILGUN_API_KEY = "95dbfb630c67c77ea3ab2c439bc559b6-2de3d545-d58ccc46"
 MAILGUN_DOMAIN = "sandbox094d96c69abf48f980bb338921d399fd.mailgun.org"
 #function to send mail to the user
-def send_simple_message(message):
+def send_email(message):
 	return requests.post(
 		"https://api.mailgun.net/v3/"+MAILGUN_DOMAIN+"/messages",
 		auth=("api", MAILGUN_API_KEY),
@@ -53,14 +53,14 @@ def second_service_task(id):
         advertisment.save()
         message="Advertisment with id "+str(id)+" is accepted"
         #send mail to the user
-        send_simple_message(message)
+        send_email(message)
     #if the tag is not car or vehicle
     if(max_confidence==0):
         advertisment=Advertisement.objects.get(id=id)
         advertisment.state="rejected"
         advertisment.save()
         message="Advertisment with id "+str(id)+" is rejected"
-        send_simple_message(message)
+        send_email(message)
     
     
 
