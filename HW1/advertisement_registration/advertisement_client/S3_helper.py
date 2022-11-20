@@ -7,7 +7,7 @@ SECRET_KEY='4758e835ebedf4818de354c5db7b35c979b100b9'
 BUCKET_NAME = 'cloud-hw'
 # Configure logging
 #function to upload file to s3
-def upload_to_server(file,id):
+def upload_to_server(image_file,addvertisment_id):
     logging.basicConfig(level=logging.INFO)
     #define the s3 resource
     try:
@@ -26,8 +26,8 @@ def upload_to_server(file,id):
             bucket = s3_resource.Bucket(BUCKET_NAME)
             bucket.put_object(
                     ACL='public-read',
-                    Body=file,
-                    Key=str(id)+".jpg",
+                    Body=image_file,
+                    Key=str(addvertisment_id)+".jpg",
                 )
             return True
         except ClientError as e:
@@ -35,8 +35,8 @@ def upload_to_server(file,id):
 
 
 #function to get the s3 url of the file
-def create_image_url(id):
-    return "https://cloud-hw.s3.ir-thr-at1.arvanstorage.com/"+str(id)+".jpg"
+def create_image_url(addvertisment_id):
+    return "https://cloud-hw.s3.ir-thr-at1.arvanstorage.com/"+str(addvertisment_id)+".jpg"
 
 #function to download the file from s3
 #if you want to download the file from s3 you can use this function
@@ -47,7 +47,7 @@ def create_image_url(id):
 #the function will return True if the file is downloaded
 #and False if the file is not downloaded
 #uncomment the function to use it
-# def download_from_server(id):
+# def download_from_server(addvertisment_id):
 #     logging.basicConfig(level=logging.INFO)
 
 #     try:
@@ -62,8 +62,8 @@ def create_image_url(id):
 #     else:
 #         try:
 #             bucket = s3_resource.Bucket('cloud-hw')
-#             download_path = '/tmp/{}{}'.format(id, '.jpg')
-#             bucket.download_file(str(id)+".jpg", download_path)
+#             download_path = '/tmp/{}{}'.format(addvertisment_id, '.jpg')
+#             bucket.download_file(create_image_url(addvertisment_id), download_path)
 #             return True
 #         except ClientError as e:
 #             logging.error(e)
