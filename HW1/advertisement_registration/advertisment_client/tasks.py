@@ -6,12 +6,14 @@ IMG_KEY="acc_90ccaadfac4bca7"
 IMG_SECRET_KEY="daee709507bb27b5756e6dfac46b5222"
 IMG_AUTH="Basic YWNjXzkwY2NhYWRmYWM0YmNhNzpkYWVlNzA5NTA3YmIyN2I1NzU2ZTZkZmFjNDZiNTIyMg=="
 IMG_ENDPOINT="https://api.imagga.com"
+MAILGUN_API_KEY = "95dbfb630c67c77ea3ab2c439bc559b6-2de3d545-d58ccc46"
+MAILGUN_DOMAIN = "sandbox094d96c69abf48f980bb338921d399fd.mailgun.org"
 #function to send mail to the user
 def send_simple_message(message):
 	return requests.post(
-		"https://api.mailgun.net/v3/sandbox094d96c69abf48f980bb338921d399fd.mailgun.org/messages",
-		auth=("api", "95dbfb630c67c77ea3ab2c439bc559b6-2de3d545-d58ccc46"),
-		data={"from": "Excited User <mailgun@sandbox094d96c69abf48f980bb338921d399fd.mailgun.org>",
+		"https://api.mailgun.net/v3/"+MAILGUN_DOMAIN+"/messages",
+		auth=("api", MAILGUN_API_KEY),
+		data={"from": "Excited User <mailgun@"+MAILGUN_DOMAIN+">",
 			"to": ["mohamadchoupan80@gmail.com","mohamadchoupan94@gmail.com"],
 			"subject": "Advertisment APP",
 			"text": message})
