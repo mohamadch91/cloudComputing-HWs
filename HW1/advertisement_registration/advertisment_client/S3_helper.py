@@ -38,23 +38,33 @@ def upload_to_server(file,id):
 def create_image_url(id):
     return "https://cloud-hw.s3.ir-thr-at1.arvanstorage.com/"+str(id)+".jpg"
 
-def download_from_server(id):
-    logging.basicConfig(level=logging.INFO)
+#function to download the file from s3
+#if you want to download the file from s3 you can use this function
+#please note that you should have the file in your s3 bucket
+#and you should have the id of the file
+#the function will download the file in the /tmp directory
+#you can change the download path
+#the function will return True if the file is downloaded
+#and False if the file is not downloaded
+#uncomment the function to use it
+# def download_from_server(id):
+#     logging.basicConfig(level=logging.INFO)
 
-    try:
-        s3_resource = boto3.resource(
-            's3',
-            endpoint_url='https://s3.ir-thr-at1.arvanstorage.com',
-            aws_access_key_id='57cbf04d-38dc-4ab4-817a-7f232aead7f1',
-            aws_secret_access_key='4758e835ebedf4818de354c5db7b35c979b100b9'
-        )
-    except Exception as exc:
-        logging.error(exc)
-    else:
-        try:
-            bucket = s3_resource.Bucket('cloud-hw')
-            download_path = '/tmp/{}{}'.format(id, '.jpg')
-            bucket.download_file(str(id)+".jpg", download_path)
-            return True
-        except ClientError as e:
-            logging.error(e)
+#     try:
+#         s3_resource = boto3.resource(
+#             's3',
+#             endpoint_url='https://s3.ir-thr-at1.arvanstorage.com',
+#             aws_access_key_id='57cbf04d-38dc-4ab4-817a-7f232aead7f1',
+#             aws_secret_access_key='4758e835ebedf4818de354c5db7b35c979b100b9'
+#         )
+#     except Exception as exc:
+#         logging.error(exc)
+#     else:
+#         try:
+#             bucket = s3_resource.Bucket('cloud-hw')
+#             download_path = '/tmp/{}{}'.format(id, '.jpg')
+#             bucket.download_file(str(id)+".jpg", download_path)
+#             return True
+#         except ClientError as e:
+#             logging.error(e)
+#             return False
