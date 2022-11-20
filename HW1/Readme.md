@@ -72,12 +72,11 @@ if you want to use your own email service please change the following line in ad
 ## 1.3
 ### How to use the project:
 1. First you need to run  the project.
-2. Then you can open the following link to see the service:
-http://localhost:8000/advertisment/add
+2. Then you can open the [this link](http://localhost:8000/advertisment/add) to see the service
+
 3. You can add a new advertisment by filling the form and click on submit button.
 4. After submitting the form you will see the advertisment id.
-5. You can open the following link to see the advertisment details:
-http://localhost:8000/advertisment/get/<id>
+5. You can open the [this link](http://localhost:8000/advertisment/get/1) to see the advertisment details:
 6. You can see the advertisment details and the image tags.
 
 ## 1.4
