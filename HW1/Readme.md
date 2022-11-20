@@ -5,7 +5,6 @@ to see project description please read CC-HW1.pdf
 we have one Django project with one app in it.
 to run the project please use the following command:
 ```
-    git checkout hw-1
     cd HW1/advertisment_registration
     python manage.py runserver
 ```
