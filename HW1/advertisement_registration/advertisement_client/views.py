@@ -37,7 +37,7 @@ class AddAddvertismentView(generics.CreateAPIView):
                 add.image=create_image_url(add_id)
                 add.save()
                 #call the second service from celery
-                second_service_task.delay(add_id)
+                second_service_task.delay(add_id,request.data["email"])
                 #return the response
                 return Response({"message": f"your advertisment submited with id {add_id}"} ,status=status.HTTP_201_CREATED)
             #if the image is not uploaded

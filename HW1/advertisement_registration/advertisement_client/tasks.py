@@ -9,17 +9,17 @@ IMG_ENDPOINT="https://api.imagga.com"
 MAILGUN_API_KEY = "95dbfb630c67c77ea3ab2c439bc559b6-2de3d545-d58ccc46"
 MAILGUN_DOMAIN = "sandbox094d96c69abf48f980bb338921d399fd.mailgun.org"
 #function to send mail to the user
-def send_email(message):
+def send_email(message,email):
 	return requests.post(
 		"https://api.mailgun.net/v3/"+MAILGUN_DOMAIN+"/messages",
 		auth=("api", MAILGUN_API_KEY),
-		data={"from": "Excited User <mailgun@"+MAILGUN_DOMAIN+">",
-			"to": ["mohamadchoupan80@gmail.com","mohamadchoupan94@gmail.com"],
+		data={"from": "Mohamad Advertisment app <mailgun@"+MAILGUN_DOMAIN+">",
+			"to": [email],
 			"subject": "Advertisment APP",
 			"text": message})
 
 @shared_task
-def second_service_task(id):
+def second_service_task(id, email):
     #get advertisment image from s3
     #send advertisment to second service
     #get response from second service
@@ -53,14 +53,14 @@ def second_service_task(id):
         advertisment.save()
         message="Advertisment with id "+str(id)+" is accepted"
         #send mail to the user
-        send_email(message)
+        send_email(message, email)
     #if the tag is not car or vehicle
     if(max_confidence==0):
         advertisment=Advertisement.objects.get(id=id)
         advertisment.state="rejected"
         advertisment.save()
         message="Advertisment with id "+str(id)+" is rejected"
-        send_email(message)
+        send_email(message, email)
     
     
 
