@@ -33,7 +33,7 @@ def second_service_task(id):
     #get the response
 
     data=response.json()
-
+    
     res=data["result"]["tags"]
     max_confidence=0
     max_tag=""
