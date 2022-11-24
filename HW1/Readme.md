@@ -84,34 +84,36 @@ if you want to use your own email service please change the following line in ad
 ### Code structure:
 1. advertisment_registration: Django project
 2. advertisement_client: Django app
-3. [advertisement_client/models.py](https://github.com/mohamadch91/cloudCompunting-HWs/blob/hw-1/HW1/advertisement_registration/advertisement_client/models.py): contains the Advertisment model class  contains the following fields:
+3. [`advertisement_client/models.py`](./advertisement_registration/advertisement_client/models.py): contains the Advertisment model class  contains the following fields:
     1. title: CharField
     2. description: TextField
     3. image: CharField
     4. email: EmailField
     5. state: CharField
     6. category: CharField
-4. [advertisement_client/views.py](https://github.com/mohamadch91/cloudCompunting-HWs/blob/hw-1/HW1/advertisement_registration/advertisement_client/views.py): contains the views of the project and the following functions:
-    1. add_advertisment: AddAddvertismentView inheits from generics.CreateAPIView:
+4. [`advertisement_client/views.py`](./advertisement_registration/advertisement_client/views.py): contains the views of the project and the following functions:
+    1. `AddAddvertismentView`: AddAddvertismentView inheits from generics.CreateAPIView:
         1. post: add advertisment to the database and send the advertisment id to the user
             also  send the advertisment image to S3 and send the image to image processing service
             and email the advertisment image status to the user
-    2. get_advertisment: GetAddvertismentView enherits from generics.RetrieveAPIView: 
+    2. `GetAddvertismentView`: GetAddvertismentView enherits from generics.RetrieveAPIView: 
         1. get: get advertisment from the database and send the advertisment details to the user
-5. [advertisement_client/urls.py](https://github.com/mohamadch91/cloudCompunting-HWs/blob/hw-1/HW1/advertisement_registration/advertisement_client/urls.py): contains the urls of the project
-6. [advertisement_client/serializers.py](https://github.com/mohamadch91/cloudCompunting-HWs/blob/hw-1/HW1/advertisement_registration/advertisement_client/serializers.py): contains the serializers of the project
-7. [advertisement_client/tasks.py](https://github.com/mohamadch91/cloudCompunting-HWs/blob/hw-1/HW1/advertisement_registration/advertisement_client/tasks.py): contains the tasks of the project must be run in the background
-    1. second_service_task function:
+5. [`advertisement_client/urls.py`](./advertisement_registration/advertisement_client/urls.py): contains the urls of the project
+6. [`advertisement_client/serializers.py`](./advertisement_registration/advertisement_client/serializers.py): contains the serializers of the project
+    - `AdvertisementSerializer`: AdvertisementSerializer enherits from serializers.ModelSerializer
+    - `AddAdvertismentSerializer`: AddAdvertismentSerializer enherits from serializers.Serializer
+7. [`advertisement_client/tasks.py`](./advertisement_registration/advertisement_client/tasks.py): contains the tasks of the project must be run in the background
+    1. `second_service_task` function:
         1. retrieve image url from S3
         2. send_image_to_imagga: send the advertisment image to image processing service
-        3. send_email: send_email
+        3. `send_email`: send_email
             1. send_email: send email to the user with mailgun
-8. [advertisement_client/S3_helper.py](https://github.com/mohamadch91/cloudCompunting-HWs/blob/hw-1/HW1/advertisement_registration/advertisement_client/S3_helper.py): contains the S3 helper functions
-    1. upload_to_server: upload the advertisment image to S3
-    2. download_from_server: get the advertisment image from S3 you need to uncomment the following line in S3_helper.py:
+8. [`advertisement_client/S3_helper.py`](./advertisement_registration/advertisement_client/S3_helper.py): contains the S3 helper functions
+    1. `upload_to_server`: upload the advertisment image to S3
+    2. `download_from_server`: get the advertisment image from S3 you need to uncomment the following line in S3_helper.py:
         ```
         # download_from_server(image_id)
         ...
         ```
-    3. create_image_url: create the advertisment image url
+    3. `create_image_url`: create the advertisment image url
 
