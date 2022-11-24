@@ -46,7 +46,7 @@ def second_service_task(id, email):
                 max_confidence=confidence
                 max_tag=text
     #check if the tag is car or vehicle
-    if(max_confidence>0):
+    if(max_confidence>30):
         advertisment=Advertisement.objects.get(id=id)
         advertisment.state="accepted"
         advertisment.category=max_tag
@@ -55,7 +55,7 @@ def second_service_task(id, email):
         #send mail to the user
         send_email(message, email)
     #if the tag is not car or vehicle
-    if(max_confidence==0):
+    if(max_confidence<30):
         advertisment=Advertisement.objects.get(id=id)
         advertisment.state="rejected"
         advertisment.save()
