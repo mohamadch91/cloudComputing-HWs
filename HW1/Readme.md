@@ -100,8 +100,8 @@ if you want to use your own email service please change the following line in ad
         1. get: get advertisment from the database and send the advertisment details to the user
 5. [`advertisement_client/urls.py`](./advertisement_registration/advertisement_client/urls.py): contains the urls of the project
 6. [`advertisement_client/serializers.py`](./advertisement_registration/advertisement_client/serializers.py): contains the serializers of the project
-    - `AdvertisementSerializer`: AdvertisementSerializer enherits from serializers.ModelSerializer
-    - `AddAdvertismentSerializer`: AddAdvertismentSerializer enherits from serializers.Serializer
+    1. `AdvertisementSerializer`: AdvertisementSerializer enherits from serializers.ModelSerializer
+    2. `AddAdvertismentSerializer`: AddAdvertismentSerializer enherits from serializers.Serializer
 7. [`advertisement_client/tasks.py`](./advertisement_registration/advertisement_client/tasks.py): contains the tasks of the project must be run in the background
     1. `second_service_task` function:
         1. retrieve image url from S3
