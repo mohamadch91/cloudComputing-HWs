@@ -41,7 +41,7 @@ def second_service_task(id, email):
     for i in res:
         text=i["tag"]["en"]
         confidence=i["confidence"]
-        if(text == "car" or text == "vehicle" or text == "transportation" or text == "automobile" or text == "motor vehicle" or text == "motorcar" or text == "machine" or text == "motor" or text == "motorcycle" or text == "motorbike"):
+        if(text == "car" or text == "vehicle" ):
             if(confidence>max_confidence):
                 max_confidence=confidence
                 max_tag=text

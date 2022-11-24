@@ -130,11 +130,11 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240
 # DATABASES = {
 #   'default': {
 #      'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'tls_db',
+#         'NAME': 'cloud-hwahn_db',
 #         'USER': 'postgres',
-#         'PASSWORD': 'fdhdkj@33443',
-#         'HOST': 'runflare',
-#         'PORT': '5432',
+#         'PASSWORD': 'qv2ndulewyyfmez',
+#         'HOST': 'remote.runflare.com',
+#         'PORT': '30652',
 # }
 # }
 DATABASES = {
