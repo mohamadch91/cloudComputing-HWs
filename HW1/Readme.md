@@ -1,4 +1,4 @@
-# Cloud computing Course from AUT 
+
 # Home work1 
 to see project description please read CC-HW1.pdf
 ## 1.1
