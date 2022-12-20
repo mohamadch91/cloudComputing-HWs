@@ -23,6 +23,6 @@ now we need to push the image to the docker hub.
 
 ```bash
 docker build -t curl .
-docker tag curl:latest <dockerhub_username>/curl:latest
-docker push <dockerhub_username>/curl:latest
+docker tag curl:latest mohamadch91/curl:latest
+docker push mohamadch91/curl:latest
 ```
