@@ -26,3 +26,4 @@ docker build -t curl .
 docker tag curl:latest mohamadch91/curl:latest
 docker push mohamadch91/curl:latest
 ```
+
