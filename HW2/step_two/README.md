@@ -170,3 +170,6 @@ In this step we need to create network for redis and Django
 docker network create crypto
 ```
 
+### Result
+
+![network create](./images/network.png)
