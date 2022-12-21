@@ -19,7 +19,8 @@ runserver.default_port = os.environ.get('DJANGO_PORT', '8001')
 
 COINAPI_KEY = os.environ.get('COINAPI_KEY', 'CBAD064B-9F00-4FD3-8C61-8C6E09B9E4B0')
 
-CACHE_TTL=os.environ.get('CACHE_TTL', '350')
+CACHE_TTL=os.environ.get('CACHE_TTL', 60*5+1)
+REDIS_PORT=os.environ.get('REDIS_PORT', 6379)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -76,6 +77,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'crypto.wsgi.application'
 
 
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": f'redis://127.0.0.1:{REDIS_PORT}/1',
+        "OPTIONS": {"CLIENT_CLASS": "django_redis.client.DefaultClient"},
+        "KEY_PREFIX": "example",
+    }
+}
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "default"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
