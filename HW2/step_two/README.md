@@ -61,6 +61,9 @@ change [settings.py](./crypto/crypto/settings.py) file for add app
 
 and add [urls.py](./crypto/crypto/urls.py) file for routing
 
+#### Results
+
+![Django](./images/django.png)
 
 
 ### 2.2.3
@@ -111,9 +114,6 @@ docker tag crypto:latest mohamadch91/crypto:latest
 docker push mohamadch91/crypto:latest
 ```
 
-### Results
-
-![Django](./images/django.png)
 
 ## 2.3
 In this step we need to create config file for Django and redis
