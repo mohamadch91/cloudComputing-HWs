@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'crypto.wsgi.application'
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": f'redis://127.0.0.1:{REDIS_PORT}/1',
+        "LOCATION": f'redis://redis_net:{REDIS_PORT}/1',
         "OPTIONS": {"CLIENT_CLASS": "django_redis.client.DefaultClient"},
-        "KEY_PREFIX": "example",
+        "KEY_PREFIX": "crypto",
     }
 }
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"

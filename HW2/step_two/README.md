@@ -24,7 +24,7 @@ First we need to pull redis image and make container from pulled image
 
 ```bash
 docker pull redis
-docker run --name redis -d redis
+docker run --name redis_net -d redis
 ```
 
 ### Result
@@ -173,3 +173,5 @@ docker network create crypto
 ### Result
 
 ![network create](./images/network.png)
+
+
