@@ -104,6 +104,9 @@ Make image from Dockerfile
 ```bash
 docker build -t crypto .
 ```
+#### Result
+
+![Build](./images/build-image.png)
 
 ### 2.2.6
 
@@ -113,6 +116,11 @@ Push image to docker hub
 docker tag crypto:latest mohamadch91/crypto:latest
 docker push mohamadch91/crypto:latest
 ```
+#### Result
+
+![Build](./images/tag-image.png)
+![Build](./images/push-image.png)
+![Build](./images/dockehub.png)
 
 
 ## 2.3
@@ -136,7 +144,7 @@ Change [setting.py](./crypto/crypto/settings.py) file for env
 
 runserver.default_port = os.environ.get('DJANGO_PORT', '8001')
 
-COINAPI_KEY = os.environ.get('COINAPI_KEY', 'CBAD064B-9F00-4FD3-8C61-8C6E09B9E4B0')
+COINAPI_KEY = os.environ.get('COINAPI_KEY', 'Your key')
 
 CACHE_TTL=os.environ.get('CACHE_TTL', '350')
 
