@@ -55,7 +55,6 @@ redis==3.5.3
 ```
 
 
-CBAD064B-9F00-4FD3-8C61-8C6E09B9E4B0
 ### 2.2.3
 
 Create a Dockerfile in crypto directory
