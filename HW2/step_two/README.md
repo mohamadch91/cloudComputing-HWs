@@ -116,6 +116,19 @@ docker push mohamadch91/crypto:latest
 ![Django](./images/django.png)
 
 ## 2.3
+In this step we need to create config file for Django and redis
+
+### 2.3.1
+
+Create a env file for Django and redis in Dockerfile
+
+```bash
+CACHE_TTL=300
+REDIS_HOST=redis
+REDIS_PORT=6379
+DJANGO_PORT=8000
+COINAPI_KEY=YOUR_API
+```
 
 
 
