@@ -27,6 +27,8 @@ docker tag curl:latest mohamadch91/curl:latest
 docker push mohamadch91/curl:latest
 ```
 
+![Builded image](./images/build.png)
+
 ## 1.3
 
 now we need to pull the image from the docker hub and create container from it.
