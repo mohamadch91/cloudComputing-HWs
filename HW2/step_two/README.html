@@ -154,6 +154,8 @@
 </ul>
 </li>
 </ul>
+    <div style="break-after:page"></div>
+
 <h2 id="21">2.1</h2>
 <p>First we need to pull redis image and make container from pulled image</p>
 <pre><code class="language-bash">docker pull redis
@@ -180,6 +182,8 @@ for get data from API and show it to user</p>
 <p>create Serializer class in <a href="./crypto/cryptoApp/serializers.py">serializers.py</a> file for serialize data</p>
 <p>change <a href="./crypto/crypto/settings.py">settings.py</a> file for add app</p>
 <p>and add <a href="./crypto/crypto/urls.py">urls.py</a> file for routing</p>
+    <div style="break-after:page"></div>
+
 <h4 id="results">Results</h4>
 <p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_two/images/django.png" alt="Django"></p>
 <h3 id="223">2.2.3</h3>
@@ -205,6 +209,8 @@ COPY . /code/
 CMD python manage.py runserver
 
 </code></pre>
+    <div style="break-after:page"></div>
+
 <h3 id="225">2.2.5</h3>
 <p>Make image from Dockerfile</p>
 <pre><code class="language-bash">docker build -t crypto .
@@ -245,6 +251,8 @@ CACHE_TTL=os.environ.get(<span class="hljs-string">&#x27;CACHE_TTL&#x27;</span>,
 docker volume create redis_data
 ```
 </code></pre>
+    <div style="break-after:page"></div>
+
 <h3 id="result">Result</h3>
 <p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_two/images/volume-create.png" alt="volume cretae"></p>
 <p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_two/images/volume-ls.png" alt="volume ls"></p>
@@ -270,18 +278,26 @@ to volume and network</p>
 <li><a href="./crypto/.env">env file</a></li>
 </ul>
 <p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_two/images/env.png" alt="env"></p>
+    <div style="break-after:page"></div>
+
 <p>we see upcoming on port 8005</p>
 <p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_two/images/app.png" alt="app"></p>
 <p><strong>Get btc data</strong></p>
 <p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_two/images/getAPI.png" alt="BTC"></p>
+    <div style="break-after:page"></div>
+
 <p><strong>Get btc for second time</strong></p>
 <p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_two/images/cache-redis.png" alt="BTC Second"></p>
 <p><strong>Remove redis</strong></p>
 <p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_two/images/remove-redis.png" alt="Redis remove"></p>
 <p><strong>API response on no redis</strong></p>
 <p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_two/images/redis-removed.png" alt="No redis API"></p>
+    <div style="break-after:page"></div>
+
 <p><strong>Start again redis and check API</strong></p>
 <p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_two/images/cache-no-redis.png" alt="After redis remove"></p>
+    <div style="break-after:page"></div>
+
 <h2 id="report-details">Report details</h2>
 <h3 id="inspect-server">Inspect server</h3>
 <p>Inspect server image with</p>
@@ -289,6 +305,8 @@ to volume and network</p>
 </code></pre>
 <p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_two/images/inspect1.png" alt="image 1">
 <img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_two/images/inspect2.png" alt="image 2"></p>
+    <div style="break-after:page"></div>
+
 <h3 id="containers-list">Containers list</h3>
 <p>get list of containers</p>
 <pre><code class="language-bash">docker ps
