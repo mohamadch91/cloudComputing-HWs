@@ -37,7 +37,7 @@ Create a Django project
 ```bash
 django-admin startproject crypto
 ```
-### 2.2.1
+### 2.2.2
 
 Create a Django app
 
@@ -45,17 +45,36 @@ Create a Django app
 cd crypto
 python manage.py startapp cryptoApp
 ```
+#### 2.2.2.1 
 
-### 2.2.2
+Create a class in [Views.py](./crypto/cryptoApp/views.py) file
+for get data from API and show it to user
+
+and create a [urls.py](./crypto/cryptoApp/urls.py) file for routing
+
+create Serializer class in [serializers.py](./crypto/cryptoApp/serializers.py) file for serialize data
+
+change [settings.py](./crypto/crypto/settings.py) file for add app 
+
+and add [urls.py](./crypto/crypto/urls.py) file for routing
+
+
+
+### 2.2.3
 Create a requirements.txt
 
 ```bash
-Django==3.1.7
+Django==4.1.4
+django-cors-headers==3.13.0
+djangorestframework==3.13.1
+requests==2.26.0
+requests-toolbelt==0.9.1
+requests-unixsocket==0.2.0
 redis==3.5.3
 ```
 
 
-### 2.2.3
+### 2.2.4
 
 Create a Dockerfile in crypto directory
 and run Django server
@@ -72,7 +91,7 @@ CMD python manage.py runserver
 
 ```
 
-### 2.2.4
+### 2.2.5
 
 Make image from Dockerfile
 
@@ -80,7 +99,7 @@ Make image from Dockerfile
 docker build -t crypto .
 ```
 
-### 2.2.5
+### 2.2.6
 
 Push image to docker hub
 
