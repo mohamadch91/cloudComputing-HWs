@@ -194,7 +194,7 @@ docker compose up -d
 
 - [env file](./crypto/.env)
 
-! [env](./images/env.png)
+![env](./images/env.png)
 
 
 we see upcoming on port 8005 
