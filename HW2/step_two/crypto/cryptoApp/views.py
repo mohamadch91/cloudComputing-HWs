@@ -18,7 +18,7 @@ class CryptoPriceView(generics.CreateAPIView):
     def post(self, request):
         """post method to get crypto price
 
-            check for redis cache 
+            check for redis cache if not found then call api and store in redis cache
 
         Args:
             request (request): request object
