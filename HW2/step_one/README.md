@@ -31,6 +31,16 @@ docker push mohamadch91/curl:latest
 
 now we need to pull the image from the docker hub and create container from it.
 
+
+since we have image on local , delete image from local 
+
+```bash
+docker rmi mohamadch91/curl:latest
+```
+
+then we pull the image and run it
+    
+
 ```bash
 docker pull mohamadch91/curl:latest
 docker run -it --name curl mohamadch91/curl:latest google.com
