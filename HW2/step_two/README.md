@@ -27,6 +27,9 @@ docker pull redis
 docker run --name redis -d redis
 ```
 
+### Result
+
+![redis](./images/redis.png)
 ## 2.2
 In this step we will create Django project and app and make image from it.
 then push this image to docker hub.
