@@ -4,6 +4,8 @@ from .serializers import CryptoSerializer
 from rest_framework import generics
 import requests
 
+import crypto.settings as settings
+
 class CryptoPriceView(generics.CreateAPIView):
     """CryptoPriceView class to get crypto price
 
@@ -26,7 +28,7 @@ class CryptoPriceView(generics.CreateAPIView):
         crypto_name = serializer.validated_data['crypto_name']
         url = f'https://rest.coinapi.io/v1/assets/{crypto_name}'
         headers = {'X-CoinAPI-Key' :
-        'CBAD064B-9F00-4FD3-8C61-8C6E09B9E4B0'}
+        settings.COIN_API_KEY}
         response = requests.get(url, headers=headers).json()[0]
         name=response['name']
         price=response['price_usd']

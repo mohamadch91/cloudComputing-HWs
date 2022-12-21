@@ -16,6 +16,8 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 runserver.default_port = os.environ.get('DJANGO_PORT', '8000')
+
+COINAPI_KEY = os.environ.get('COINAPI_KEY', 'CBAD064B-9F00-4FD3-8C61-8C6E09B9E4B0')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
