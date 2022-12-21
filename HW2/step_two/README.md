@@ -181,4 +181,9 @@ to volume and network
 - [compose file](./crypto/docker-compose.yml)
 
 
+## 2.7 
+now we run de compose file 
 
+```bash
+docker compose up -d 
+```

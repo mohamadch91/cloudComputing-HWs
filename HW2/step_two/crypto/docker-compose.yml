@@ -32,4 +32,5 @@ volumes:
       
 networks:
   crypto:
+    external: true
     
