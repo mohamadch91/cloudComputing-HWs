@@ -4,18 +4,17 @@ In this step we wiil create a CryptoCurrency market price tracker. We will use r
 
 also we will use docker to run redis and python-Django.
 
-use redis cache to store data and use Django  to get data from API and show it to user.
+use redis cache to store data and use Django to get data from API and show it to user.
 
 also use docker Volumes to store data in host machine.
 
-also we  nedd to create config file for redis annd Django.
+also we nedd to create config file for redis annd Django.
 
-config file contains : 
+config file contains :
 
 - Django server port
 - redis keys expire time : default 5 minutes
 - CoinAPI API key
-
 
 - [Step two](#step-two)
   - [2.1](#21)
@@ -32,7 +31,7 @@ config file contains :
     - [2.2.6](#226)
       - [Result](#result-2)
   - [2.3](#23)
-      - [2.3.1](#231)
+    - [2.3.1](#231)
   - [2.4](#24)
     - [Result](#result-3)
   - [2.5](#25)
@@ -44,7 +43,6 @@ config file contains :
     - [Inspect server](#inspect-server)
     - [Containers list](#containers-list)
     - [System stats](#system-stats)
-
 
 ## 2.1
 
@@ -58,9 +56,12 @@ docker run --name redis_net -d redis
 ### Result
 
 ![redis](./images/redis.png)
+
 ## 2.2
+
 In this step we will create Django project and app and make image from it.
 then push this image to docker hub.
+
 ### 2.2.1
 
 Create a Django project
@@ -68,6 +69,7 @@ Create a Django project
 ```bash
 django-admin startproject crypto
 ```
+
 ### 2.2.2
 
 Create a Django app
@@ -76,7 +78,8 @@ Create a Django app
 cd crypto
 python manage.py startapp cryptoApp
 ```
-#### 2.2.2.1 
+
+#### 2.2.2.1
 
 Create a class in [Views.py](./crypto/cryptoApp/views.py) file
 for get data from API and show it to user
@@ -85,7 +88,7 @@ and create a [urls.py](./crypto/cryptoApp/urls.py) file for routing
 
 create Serializer class in [serializers.py](./crypto/cryptoApp/serializers.py) file for serialize data
 
-change [settings.py](./crypto/crypto/settings.py) file for add app 
+change [settings.py](./crypto/crypto/settings.py) file for add app
 
 and add [urls.py](./crypto/crypto/urls.py) file for routing
 
@@ -93,8 +96,8 @@ and add [urls.py](./crypto/crypto/urls.py) file for routing
 
 ![Django](./images/django.png)
 
-
 ### 2.2.3
+
 Create a requirements.txt
 
 ```bash
@@ -106,7 +109,6 @@ requests-toolbelt==0.9.1
 requests-unixsocket==0.2.0
 redis==3.5.3
 ```
-
 
 ### 2.2.4
 
@@ -132,10 +134,10 @@ Make image from Dockerfile
 ```bash
 docker build -t crypto .
 ```
+
 #### Result
 
 ![Build](./images/build-image.png)
-
 
 ### 2.2.6
 
@@ -145,14 +147,15 @@ Push image to docker hub
 docker tag crypto:latest mohamadch91/crypto:latest
 docker push mohamadch91/crypto:latest
 ```
+
 #### Result
 
 ![Build](./images/tag-image.png)
 ![Build](./images/push-image.png)
 ![Build](./images/dockehub.png)
 
-
 ## 2.3
+
 In this step we need to create config file for Django and redis
 
 Create a .env file for Django and redis in Dockerfile
@@ -165,8 +168,8 @@ DJANGO_PORT=8000
 COINAPI_KEY=YOUR_API
 ```
 
-
 #### 2.3.1
+
 Change [setting.py](./crypto/crypto/settings.py) file for env
 
 ```python
@@ -180,8 +183,9 @@ CACHE_TTL=os.environ.get('CACHE_TTL', '350')
 ```
 
 ## 2.4
-In this step we need to create volumes for redis 
-    
+
+In this step we need to create volumes for redis
+
     ```bash
     docker volume create redis_data
     ```
@@ -191,7 +195,9 @@ In this step we need to create volumes for redis
 ![volume cretae](./images/volume-create.png)
 
 ![volume ls](./images/volume-ls.png)
+
 ## 2.5
+
 In this step we need to create network for redis and Django
 
 ```bash
@@ -202,18 +208,19 @@ docker network create crypto
 
 ![network create](./images/network.png)
 
-
 ## 2.6
+
 now we need to write docker-compose.yml file for run redis and Django
 to volume and network
+
 - [compose file](./crypto/docker-compose.yml)
 
+## 2.7
 
-## 2.7 
-now we run de compose file 
+now we run de compose file
 
 ```bash
-docker compose up -d 
+docker compose up -d
 ```
 
 ### Results
@@ -224,11 +231,9 @@ docker compose up -d
 
 ![env](./images/env.png)
 
-
-we see upcoming on port 8005 
+we see upcoming on port 8005
 
 ![app](./images/app.png)
-
 
 **Get btc data**
 
@@ -250,12 +255,11 @@ we see upcoming on port 8005
 
 ![After redis remove](./images/cache-no-redis.png)
 
-
 ## Report details
 
-### Inspect server 
+### Inspect server
 
-Inspect server image with 
+Inspect server image with
 
 ```bash
 docker image inspect mohamadch91/crypto
@@ -274,7 +278,6 @@ docker ps
 ```
 
 ![containers](./images/ps.png)
-
 
 ### System stats
 
