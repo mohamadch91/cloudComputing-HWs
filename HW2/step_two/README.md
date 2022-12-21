@@ -108,6 +108,7 @@ docker build -t crypto .
 
 ![Build](./images/build-image.png)
 
+
 ### 2.2.6
 
 Push image to docker hub
@@ -150,5 +151,22 @@ CACHE_TTL=os.environ.get('CACHE_TTL', '350')
 
 ```
 
+## 2.4
+In this step we need to create volumes for redis 
+    
+    ```bash
+    docker volume create redis_data
+    ```
 
+### Result
+
+![volume cretae](./images/volume-create.png)
+
+![volume ls](./images/volume-ls.png)
+## 2.5
+In this step we need to create network for redis and Django
+
+```bash
+docker network create crypto
+```
 
