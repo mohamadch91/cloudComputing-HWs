@@ -17,6 +17,34 @@ config file contains :
 - CoinAPI API key
 
 
+- [Step two](#step-two)
+  - [2.1](#21)
+    - [Result](#result)
+  - [2.2](#22)
+    - [2.2.1](#221)
+    - [2.2.2](#222)
+      - [2.2.2.1](#2221)
+      - [Results](#results)
+    - [2.2.3](#223)
+    - [2.2.4](#224)
+    - [2.2.5](#225)
+      - [Result](#result-1)
+    - [2.2.6](#226)
+      - [Result](#result-2)
+  - [2.3](#23)
+      - [2.3.1](#231)
+  - [2.4](#24)
+    - [Result](#result-3)
+  - [2.5](#25)
+    - [Result](#result-4)
+  - [2.6](#26)
+  - [2.7](#27)
+    - [Results](#results-1)
+  - [Report details](#report-details)
+    - [Inspect server](#inspect-server)
+    - [Containers list](#containers-list)
+    - [System stats](#system-stats)
+
 
 ## 2.1
 
