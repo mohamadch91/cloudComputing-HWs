@@ -118,9 +118,7 @@ docker push mohamadch91/crypto:latest
 ## 2.3
 In this step we need to create config file for Django and redis
 
-### 2.3.1
-
-Create a env file for Django and redis in Dockerfile
+Create a .env file for Django and redis in Dockerfile
 
 ```bash
 CACHE_TTL=300
