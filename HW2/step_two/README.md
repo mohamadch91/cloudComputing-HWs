@@ -220,3 +220,41 @@ we see upcoming on port 8005
 *Start again redis and check API*
 
 ![After redis remove](./images/cache-no-redis.png)
+
+
+## Report details
+
+### Inspect server 
+
+Inspect server image with 
+
+```bash
+docker image inspect mohamadch91/crypto
+```
+
+![image 1](./images/inspect1.png)
+![image 2](./images/inspect2.png)
+
+### Containers list
+
+get list of containers
+
+```bash
+docker ps
+
+```
+
+![containers](./images/ps.png)
+
+
+### System stats
+
+get status of system with
+
+```bash
+
+docker stats
+
+```
+
+![stats](./images/stats.png)
