@@ -16,7 +16,9 @@ FROM alpine:latest
 RUN apk add --update curl
 ENTRYPOINT ["curl"]
 ```
+### Results
 
+- [Dockerfile](./Dockerfile)
 ## 1.2
 
 now we need to push the image to the docker hub.
