@@ -211,6 +211,7 @@ we see upcoming on port 8005
 ![BTC Second](./images/cache-redis.png)
 
 **remove redis**
+
 ![Redis remove](./images/remove-redis.png)
 
 **API response on no redis**
