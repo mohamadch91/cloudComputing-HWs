@@ -6,7 +6,7 @@ services:
     image: mohamadch91/crypto
     container_name: crypto
     ports:
-      - 8000:${DJANGO_PORT}
+      - ${DJANGO_PORT}:8000
     env_file:
       - ./.env
     environment:
@@ -21,13 +21,14 @@ services:
     image: redis
     container_name: redis_net
     ports:
-      - 6379:${REDIS_PORT}
+      - ${REDIS_PORT}:6379
     networks:
       - crypto
     volumes:
       - redis_data:/data
 volumes:
   redis_data:
+    external: true
       
 networks:
   crypto:
