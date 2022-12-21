@@ -43,7 +43,7 @@ Create a Django app
 
 ```bash
 cd crypto
-python manage.py startapp crypto-app
+python manage.py startapp cryptoApp
 ```
 
 ### 2.2.2
@@ -55,7 +55,7 @@ redis==3.5.3
 ```
 
 
-
+CBAD064B-9F00-4FD3-8C61-8C6E09B9E4B0
 ### 2.2.3
 
 Create a Dockerfile in crypto directory
