@@ -27,10 +27,10 @@ class CryptoPriceView(generics.CreateAPIView):
         url = f'https://rest.coinapi.io/v1/assets/{crypto_name}'
         headers = {'X-CoinAPI-Key' :
         'CBAD064B-9F00-4FD3-8C61-8C6E09B9E4B0'}
-        response = requests.get(url, headers=headers)
-        name=response.json()['name']
-        price=response.json()['price_usd']
+        response = requests.get(url, headers=headers).json()[0]
+        name=response['name']
+        price=response['price_usd']
         return Response({'name': name
         , 'price': price})
-            
+
     
