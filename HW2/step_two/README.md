@@ -187,3 +187,36 @@ now we run de compose file
 ```bash
 docker compose up -d 
 ```
+
+### Results
+
+![compuse up](./images/compose-up.png)
+
+- [env file](./crypto/.env)
+
+! [env](./images/env.png)
+
+
+we see upcoming on port 8005 
+
+![app](./images/app.png)
+
+
+*we get btc data*
+
+![BTC](./images/getAPI.png)
+
+*get btc for second time*
+
+![BTC Second](./images/cache-redis.png)
+
+*remove redis*
+! [Redis remove](./images/remove-redis.png)
+
+*API response on no redis*
+
+! [No redis API](./images/redis-removed.png)
+
+*Start again redis and check API*
+
+![After redis remove](./images/cache-no-redis.png)
