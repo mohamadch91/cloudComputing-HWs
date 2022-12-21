@@ -37,6 +37,7 @@ class CryptoPriceView(generics.CreateAPIView):
         if has_key_in_cache :
             response=cache.get(crypto_name)
             response['detail']="Retrieved from Cache"
+
         else:    
             try:
                 url = f'https://rest.coinapi.io/v1/assets/{crypto_name}'
@@ -44,14 +45,16 @@ class CryptoPriceView(generics.CreateAPIView):
                 settings.COINAPI_KEY}
                 response = requests.get(url, headers=headers).json()[0]
                 response['detail']="Retrieved from API"
+                cache.set(crypto_name,response)
+                cache.expire(crypto_name, settings.CACHE_TTL)
             except:
-                return Response("Cannot coonect to API",status=status.HTTP_504_GATEWAY_TIMEOUT)
+                return Response("Cannot connect to API",status=status.HTTP_504_GATEWAY_TIMEOUT)
 
         
         user_response={
             'name':response['name'],
-            'price':response['price'],
-            'detail':response['detai;']
+            'price':response['price_usd'],
+            'detail':response['detail']
         }
         return Response(user_response,status=status.HTTP_200_OK)
 
