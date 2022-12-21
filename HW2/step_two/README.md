@@ -129,5 +129,18 @@ COINAPI_KEY=YOUR_API
 ```
 
 
+#### 2.3.1
+Change [setting.py](./crypto/crypto/settings.py) file for env
+
+```python
+
+runserver.default_port = os.environ.get('DJANGO_PORT', '8001')
+
+COINAPI_KEY = os.environ.get('COINAPI_KEY', 'CBAD064B-9F00-4FD3-8C61-8C6E09B9E4B0')
+
+CACHE_TTL=os.environ.get('CACHE_TTL', '350')
+
+```
+
 
 
