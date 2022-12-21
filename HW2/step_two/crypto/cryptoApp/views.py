@@ -3,9 +3,7 @@ from rest_framework.response import Response
 from .serializers import CryptoSerializer
 from rest_framework import generics
 import requests
-
-import crypto.settings as settings
-
+from django.conf import settings
 class CryptoPriceView(generics.CreateAPIView):
     """CryptoPriceView class to get crypto price
 
@@ -28,7 +26,7 @@ class CryptoPriceView(generics.CreateAPIView):
         crypto_name = serializer.validated_data['crypto_name']
         url = f'https://rest.coinapi.io/v1/assets/{crypto_name}'
         headers = {'X-CoinAPI-Key' :
-        settings.COIN_API_KEY}
+        settings.COINAPI_KEY}
         response = requests.get(url, headers=headers).json()[0]
         name=response['name']
         price=response['price_usd']
