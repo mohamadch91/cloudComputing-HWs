@@ -202,15 +202,15 @@ we see upcoming on port 8005
 ![app](./images/app.png)
 
 
-**we get btc data**
+**Get btc data**
 
 ![BTC](./images/getAPI.png)
 
-**get btc for second time**
+**Get btc for second time**
 
 ![BTC Second](./images/cache-redis.png)
 
-**remove redis**
+**Remove redis**
 
 ![Redis remove](./images/remove-redis.png)
 
