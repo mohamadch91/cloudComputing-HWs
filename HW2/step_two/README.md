@@ -175,3 +175,10 @@ docker network create crypto
 ![network create](./images/network.png)
 
 
+## 2.6
+now we need to write docker-compose.yml file for run redis and Django
+to volume and network
+- (compose file)[./docker-compose.yml]
+
+
+
