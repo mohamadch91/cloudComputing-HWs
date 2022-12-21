@@ -7,4 +7,4 @@ RUN pip install -r requirements.txt
 COPY . /code/
 RUN python manage.py makemigrations && python manage.py migrate
 
-CMD  python manage.py runserver
+CMD  python manage.py runserver 
