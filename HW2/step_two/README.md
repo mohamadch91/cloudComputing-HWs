@@ -29,23 +29,68 @@ docker run --name redis -d redis
 
 ## 2.2
 In this step we will create Django project and app and make image from it.
-then 
+then push this image to docker hub.
+### 2.2.1
+
 Create a Django project
 
 ```bash
 django-admin startproject crypto
 ```
-
 ### 2.2.1
 
 Create a Django app
 
 ```bash
 cd crypto
-python manage.py startapp crypto
+python manage.py startapp crypto-app
+```
+
+### 2.2.2
+Create a requirements.txt
+
+```bash
+Django==3.1.7
+redis==3.5.3
 ```
 
 
+
+### 2.2.3
+
+Create a Dockerfile in crypto directory
+and run Django server
+
+```bash
+FROM python:3.8
+ENV PYTHONUNBUFFERED 1
+RUN mkdir /code
+WORKDIR /code
+COPY requirements.txt /code/
+RUN pip install -r requirements.txt
+COPY . /code/
+CMD python manage.py runserver
+
+```
+
+### 2.2.4
+
+Make image from Dockerfile
+
+```bash
+docker build -t crypto .
+```
+
+### 2.2.5
+
+Push image to docker hub
+
+```bash
+docker tag crypto:latest mohamadch91/crypto:latest
+docker push mohamadch91/crypto:latest
+```
+
+## 2.3
 
 
 
