@@ -20,7 +20,7 @@ services:
       - crypto
   redis:
     image: redis
-    container_name: redis
+    container_name: redis_net
     ports:
       - 6379:${REDIS_PORT}
     networks:
