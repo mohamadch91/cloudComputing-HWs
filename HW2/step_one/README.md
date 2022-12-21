@@ -63,3 +63,5 @@ docker run -it --name curl mohamadch91/curl:latest google.com
 ![run no redirect](./images/curl-google-no.png)
 
 ![run aut](./images/curl-aut.png)
+
+![ terminal](./images/terminal.png)
