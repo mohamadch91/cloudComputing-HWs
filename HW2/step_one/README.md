@@ -26,8 +26,10 @@ docker build -t curl .
 docker tag curl:latest mohamadch91/curl:latest
 docker push mohamadch91/curl:latest
 ```
-
+### Results
 ![Builded image](./images/build.png)
+
+![Push image](./images/push.png)
 
 ## 1.3
 
@@ -39,6 +41,8 @@ since we have image on local , delete image from local
 ```bash
 docker rmi mohamadch91/curl:latest
 ```
+### Results
+![Remove local image](./images/remove.png)
 
 then we pull the image and run it
     
@@ -47,3 +51,11 @@ then we pull the image and run it
 docker pull mohamadch91/curl:latest
 docker run -it --name curl mohamadch91/curl:latest google.com
 ```
+### Results
+![pull image](./images/pull-images.png)
+
+![run google.com](./images/curl-google.png)
+
+![run no redirect](./images/curl-google-no.png)
+
+![run aut](./images/curl-aut.png)
