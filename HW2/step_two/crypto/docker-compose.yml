@@ -6,13 +6,12 @@ services:
     image: mohamadch91/crypto
     container_name: crypto
     ports:
-      - ${DJANGO_PORT}:${DJANGO_PORT}
+      - 8000:${DJANGO_PORT}
     env_file:
       - ./.env
     environment:
       - CACHE_TTL=${CACHE_TTL}
       - COINAPI_KEY=${COINAPI_KEY}
-      - DJANGO_PORT=${DJANGO_PORT}
       - REDIS_PORT=${REDIS_PORT}    
     depends_on:
       - redis
