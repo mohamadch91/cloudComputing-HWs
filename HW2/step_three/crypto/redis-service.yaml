@@ -9,16 +9,10 @@ metadata:
     io.kompose.service: redis
   name: redis
 spec:
-  env:
-    - name: REDIS_PORT
-              valueFrom:
-                configMapKeyRef:
-                  key: REDIS_PORT
-                  name: env
   ports:
     - name: "6379"
-      port: ${REDIS_PORT}
-      targetPort: ${REDIS_PORT}
+      port: 6379
+      targetPort: 6379
   selector:
     io.kompose.service: redis
 status:

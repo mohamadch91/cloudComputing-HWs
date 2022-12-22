@@ -7,18 +7,18 @@ pull  the image from the docker hub and create container from it.
 run the container and send a request to the google.com website.
 
 - [Step one](#step-one)
-  - [1.1](#11)
+  - [1.1 Dockerfile](#11-dockerfile)
     - [Results](#results)
-  - [1.2](#12)
+  - [1.2 Push image to docker hub](#12-push-image-to-docker-hub)
     - [Results](#results-1)
-  - [1.3](#13)
+  - [1.3 Pull image from docker hub](#13-pull-image-from-docker-hub)
     - [1.3.1](#131)
     - [Results](#results-2)
     - [1.3.2](#132)
     - [Results](#results-3)
 
 
-## 1.1
+## 1.1 Dockerfile
 
 first we need too create Dockerfile with alpine base image and install curl package.
 
@@ -30,7 +30,7 @@ ENTRYPOINT ["curl"]
 ### Results
 
 - [Dockerfile](./Dockerfile)
-## 1.2
+## 1.2 Push image to docker hub
 
 now we need to push the image to the docker hub.
 
@@ -44,7 +44,7 @@ docker push mohamadch91/curl:latest
 
 ![Push image](./images/push.png)
 
-## 1.3
+## 1.3 Pull image from docker hub
 
 now we need to pull the image from the docker hub and create container from it.
 

@@ -1,19 +1,62 @@
 # Step three
 
-In this step we wiil create a CryptoCurrency market price tracker. We will use redis as a database and python as a programming language.
+In this step we need to run step two app in a kubernetes cluster.
 
-also we will use docker to run redis and python-Django.
+## Prerequisites
 
-use redis cache to store data and use Django  to get data from API and show it to user.
+* [Docker](https://docs.docker.com/install/)
+* [Kubernetes](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+* [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
+* [Step two](../step_two/README.md)
+  
+## 3.1 Download minikube
 
-also use docker Volumes to store data in host machine.
+Download minikube from [here](https://minikube.sigs.k8s.io/docs/start/)
 
-also we  nedd to create config file for redis annd Django.
+or you can use this command:
 
-config file contains : 
+```bash
+docker pull kicbase/stable:v0.0.36
+```
 
-- Django server port
-- redis keys expire time : default 5 minutes
-- CoinAPI API key
+## 3.2 Start minikube
 
-- [x]
+```bash
+minikube start --driver=docker
+```
+## 3.3 Install kompose
+
+```bash
+curl -L https://github.com/kubernetes/kompose/releases/download/v1.26.0/kompose-linux-amd64 -o kompose
+
+chmod +x kompose
+sudo mv ./kompose /usr/local/bin/kompose
+```
+
+## 3.4 Run kompose 
+
+convert docker-compose.yml to kubernetes resources
+
+```bash
+kompose convert
+```
+
+## 3.5 Run kubernetes resources
+
+```bash
+kubectl apply -f .
+```
+
+## 3.6 Check kubernetes resources
+
+```bash
+kubectl get all
+```
+
+## 3.7 Check minikube dashboard
+
+```bash
+minikube dashboard
+```
+
+

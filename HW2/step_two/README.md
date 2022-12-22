@@ -44,7 +44,7 @@ config file contains :
     - [Containers list](#containers-list)
     - [System stats](#system-stats)
 
-## 2.1
+## 2.1 Pull redis
 
 First we need to pull redis image and make container from pulled image
 
@@ -57,7 +57,7 @@ docker run --name redis_net -d redis
 
 ![redis](./images/redis.png)
 
-## 2.2
+## 2.2 Django app
 
 In this step we will create Django project and app and make image from it.
 then push this image to docker hub.
@@ -154,7 +154,7 @@ docker push mohamadch91/crypto:latest
 ![Build](./images/push-image.png)
 ![Build](./images/dockehub.png)
 
-## 2.3
+## 2.3 Config file
 
 In this step we need to create config file for Django and redis
 
@@ -168,7 +168,7 @@ DJANGO_PORT=8000
 COINAPI_KEY=YOUR_API
 ```
 
-#### 2.3.1
+#### 2.3.1 
 
 Change [setting.py](./crypto/crypto/settings.py) file for env
 
@@ -182,7 +182,7 @@ CACHE_TTL=os.environ.get('CACHE_TTL', '350')
 
 ```
 
-## 2.4
+## 2.4 Volumes
 
 In this step we need to create volumes for redis
 
@@ -196,7 +196,7 @@ In this step we need to create volumes for redis
 
 ![volume ls](./images/volume-ls.png)
 
-## 2.5
+## 2.5 Network
 
 In this step we need to create network for redis and Django
 
@@ -208,14 +208,14 @@ docker network create crypto
 
 ![network create](./images/network.png)
 
-## 2.6
+## 2.6 Compose
 
 now we need to write docker-compose.yml file for run redis and Django
 to volume and network
 
 - [compose file](./crypto/docker-compose.yml)
 
-## 2.7
+## 2.7 Run
 
 now we run de compose file
 
