@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Step three</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension ms-toolsai.jupyter */
+/* These classnames are inherited from bootstrap, but are present in most notebook renderers */
+
+.alert {
+    width: auto;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.alert > *:last-child {
+    margin-bottom: 0;
+}
+#preview > .alert:last-child {
+    /* Prevent this being set to zero by the default notebook stylesheet */
+    padding-bottom: 1em;
+}
+
+.alert-success {
+    /* Note there is no suitable color available, so we just copy "info" */
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-info {
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-warning {
+    background-color: var(--theme-warning-background);
+    color: var(--theme-warning-foreground);
+}
+.alert-danger {
+    background-color: var(--theme-error-background);
+    color: var(--theme-error-foreground);
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="step-three">Step three</h1>
+<p>In this step we need to run step two app in a kubernetes cluster.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li><a href="https://docs.docker.com/install/">Docker</a></li>
+<li><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">Kubernetes</a></li>
+<li><a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">Minikube</a></li>
+<li><a href="../step_two/README.html">Step two</a></li>
+</ul>
+<h2 id="31-download-minikube">3.1 Download minikube</h2>
+<p>Download minikube from <a href="https://minikube.sigs.k8s.io/docs/start/">here</a></p>
+<p>or you can use this command:</p>
+<pre><code class="language-bash">docker pull kicbase/stable:v0.0.36
+</code></pre>
+<h2 id="32-start-minikube">3.2 Start minikube</h2>
+<pre><code class="language-bash">minikube start --driver=docker
+</code></pre>
+<h2 id="33-install-kompose">3.3 Install kompose</h2>
+<pre><code class="language-bash">curl -L https://github.com/kubernetes/kompose/releases/download/v1.26.0/kompose-linux-amd64 -o kompose
+
+<span class="hljs-built_in">chmod</span> +x kompose
+sudo <span class="hljs-built_in">mv</span> ./kompose /usr/local/bin/kompose
+</code></pre>
+<h2 id="34-run-kompose">3.4 Run kompose</h2>
+<p>convert docker-compose.yml to kubernetes resources</p>
+<pre><code class="language-bash">kompose convert
+</code></pre>
+<h2 id="35-run-kubernetes-resources">3.5 Run kubernetes resources</h2>
+<pre><code class="language-bash">kubectl apply -f .
+</code></pre>
+<h2 id="36-check-kubernetes-resources">3.6 Check kubernetes resources</h2>
+<pre><code class="language-bash">kubectl get all
+</code></pre>
+    <div style="break-after:page"></div>
+
+<h3 id="results">Results</h3>
+<p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_three/images/step_three.png" alt="images"></p>
+<p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_three/images/all.png" alt="images"></p>
+<p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_three/images/pv.png" alt="pv"></p>
+<p>first pod ip</p>
+<p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_three/images/pod1.png" alt="pod"></p>
+<p>second pod ip</p>
+<p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_three/images/pod2.png" alt="pod"></p>
+
+        
+        
+    </body>
+    </html>
