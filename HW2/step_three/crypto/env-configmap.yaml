@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  CACHE_TTL: "300"
+  COINAPI_KEY: CBAD064B-9F00-4FD3-8C61-8C6E09B9E4B0
+  DJANGO_PORT: "8005"
+  REDIS_PORT: "6379"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: crypto-env
+  name: env

@@ -13,6 +13,7 @@ services:
       - CACHE_TTL=${CACHE_TTL}
       - COINAPI_KEY=${COINAPI_KEY}
       - REDIS_PORT=${REDIS_PORT}    
+      - DJANGO_PORT=${DJANGO_PORT}
     depends_on:
       - redis
     networks:
