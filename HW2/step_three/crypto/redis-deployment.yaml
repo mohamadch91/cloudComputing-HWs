@@ -35,6 +35,7 @@ spec:
             - mountPath: /data
               name: redis-data
       restartPolicy: Always
+      hostname: redis
       volumes:
         - name: redis-data
           persistentVolumeClaim:

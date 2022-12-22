@@ -47,10 +47,11 @@ spec:
                   key: REDIS_PORT
                   name: env
           image: mohamadch91/crypto
+          imagePullPolicy: Never
           name: crypto
           ports:
             - containerPort: 8000
           resources: {}
-      hostname: api
+      hostname: crypto
       restartPolicy: Always
 status: {}

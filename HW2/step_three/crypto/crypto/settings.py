@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-qv(jdp&&64zr^s3cor0wo*&3t(=$=v86(8*cq7+3-s^@o%xmwj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'crypto.wsgi.application'
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": f'redis://redis_net:{REDIS_PORT}/1',
+        "LOCATION": f'redis://redis:{REDIS_PORT}/1',
         "OPTIONS": {"CLIENT_CLASS": "django_redis.client.DefaultClient"},
         "KEY_PREFIX": "crypto",
     }
