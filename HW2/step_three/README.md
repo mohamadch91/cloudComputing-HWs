@@ -53,6 +53,8 @@ kubectl apply -f .
 kubectl get all
 ```
 
+![images](images/step_three.png)
+
 ## 3.7 Check minikube dashboard
 
 ```bash
