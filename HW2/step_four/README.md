@@ -16,7 +16,7 @@ minikube kubectl -- exec --stdin --tty curl /bin/bash
 minikube kubectl -- get all
 ```
 
-then 
+**then** 
 
 ```bash
 minikube kubectl -- logs ${POD_NAME} 
@@ -25,14 +25,16 @@ minikube kubectl -- logs ${POD_NAME}
 
 ### Results
 
-we see all requests with curl
+**requests with curl container to service**
 
 ![curl](./curl.png)
 
-requests go to pod1
+**requests go to pod1**
 
 ![pod1](./pod1.png)
 
-requests go to pod2
+**requests go to pod2**
 
 ![pod2](./pod2.png)
+
+we can see that requests go to pod1 and pod2 and balance between them.
