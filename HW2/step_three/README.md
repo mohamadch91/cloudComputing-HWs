@@ -61,10 +61,10 @@ kubectl get all
 ![pv](./images/pv.png)
 
 
-first pod ip 
+**first pod ip** 
 
 ![pod](./images/pod1.png)
 
-second pod ip
+**second pod ip**
 
 ![pod](./images/pod2.png)
