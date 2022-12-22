@@ -19,4 +19,4 @@ please use the following command to see the code:
     cd HW2
 ```
 ### 1.2
-Please read the HW2/Readme.md file to see the description of the project.
+Please read the [Readme](./HW2/README.md) file to see the description of the project.
