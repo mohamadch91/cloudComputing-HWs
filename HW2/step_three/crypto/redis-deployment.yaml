@@ -26,10 +26,17 @@ spec:
         io.kompose.service: redis
     spec:
       containers:
-        - image: redis
+        - env:
+            - name: REDIS_PORT
+              valueFrom:
+                configMapKeyRef:
+                  key: REDIS_PORT
+                  name: env
+          
+          image: redis
           name: redis-net
           ports:
-            - containerPort: 6379
+            - containerPort: ${REDIS_PORT}
           resources: {}
           volumeMounts:
             - mountPath: /data

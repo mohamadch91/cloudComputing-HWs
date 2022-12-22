@@ -9,10 +9,16 @@ metadata:
     io.kompose.service: crypto
   name: crypto
 spec:
+  env:
+    - name: DJANGO_PORT
+      valueFrom:
+        configMapKeyRef:
+          key: DJANGO_PORT
+          name: env
   ports:
     - name: "8000"
-      port: 8000
-      targetPort: 8000
+      port: ${DJANGO_PORT}
+      targetPort: ${DJANGO_PORT}
   selector:
     io.kompose.service: crypto
 status:
