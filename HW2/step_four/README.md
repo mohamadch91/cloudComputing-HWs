@@ -19,7 +19,7 @@ minikube kubectl -- get all
 then 
 
 ```bash
-minikube kubectl logs ${POD_NAME} ${CONTAINER_NAME}
+minikube kubectl -- logs ${POD_NAME} 
 
 ```
 

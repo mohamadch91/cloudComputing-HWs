@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Step four</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension ms-toolsai.jupyter */
+/* These classnames are inherited from bootstrap, but are present in most notebook renderers */
+
+.alert {
+    width: auto;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.alert > *:last-child {
+    margin-bottom: 0;
+}
+#preview > .alert:last-child {
+    /* Prevent this being set to zero by the default notebook stylesheet */
+    padding-bottom: 1em;
+}
+
+.alert-success {
+    /* Note there is no suitable color available, so we just copy "info" */
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-info {
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-warning {
+    background-color: var(--theme-warning-background);
+    color: var(--theme-warning-foreground);
+}
+.alert-danger {
+    background-color: var(--theme-error-background);
+    color: var(--theme-error-foreground);
+}
+
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="step-four">Step four</h1>
+<p>In this step we will run first app in a kubernetes cluster.
+and request with curl to get btc data.</p>
+<h2 id="41-run-app-in-kubernetes-cluster">4.1 run app in kubernetes cluster</h2>
+<pre><code class="language-bash">minikube kubectl -- run curl --image=mohamadch91/curln --restart=Never 
+minikube kubectl -- <span class="hljs-built_in">exec</span> --stdin --<span class="hljs-built_in">tty</span> curl /bin/bash
+</code></pre>
+<h2 id="42-check-result">4.2 check result</h2>
+<pre><code class="language-bash">minikube kubectl -- get all
+</code></pre>
+<p>then</p>
+<pre><code class="language-bash">minikube kubectl -- logs <span class="hljs-variable">${POD_NAME}</span> 
+
+</code></pre>
+<h3 id="results">Results</h3>
+<p>we see all requests with curl</p>
+<p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_four/curl.png" alt="curl"></p>
+<p>requests go to pod1</p>
+<p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_four/pod1.png" alt="pod1"></p>
+<p>requests go to pod2</p>
+<p><img src="file:////mnt/mamads/uni/7/Cloud/HW/cloudCompunting-HWs/HW2/step_four/pod2.png" alt="pod2"></p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>
