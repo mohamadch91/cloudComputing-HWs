@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  
+  crypto:
+    image: mohamadch91/crypto
+    container_name: crypto
+    ports:
+      - ${DJANGO_PORT}:${DJANGO_PORT}
+    env_file:
+      - ./.env
+    environment:
+      - CACHE_TTL=${CACHE_TTL}
+      - COINAPI_KEY=${COINAPI_KEY}
+      - REDIS_PORT=${REDIS_PORT}    
+      - DJANGO_PORT=${DJANGO_PORT}
+    depends_on:
+      - redis
+    networks:
+      - crypto
+  redis:
+    image: redis
+    container_name: redis_net
+    ports:
+      - ${REDIS_PORT}:6379
+    networks:
+      - crypto
+    volumes:
+      - redis_data:/data
+volumes:
+  redis_data:
+    external: true
+      
+networks:
+  crypto:
+    external: true
+    

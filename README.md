@@ -1,3 +1,4 @@
+
 # Home work of cloud computing course
  
 ## Homework 1
@@ -15,7 +16,6 @@ Please read the HW1/Readme.md file to see the description of the project.
 ### 1.1
 please use the following command to see the code:
 ``` 
-    git checkout hw-2
     cd HW2
 ```
 ### 1.2
