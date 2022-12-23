@@ -122,7 +122,7 @@ docker exec -it <container_name> <command>
 This command is used to run a docker-compose file
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 #### Docker compose down
@@ -130,7 +130,7 @@ docker-compose up -d
 This command is used to stop and remove a docker-compose file
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 
