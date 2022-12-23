@@ -24,7 +24,11 @@
     - [Docker volume inspect](#docker-volume-inspect)
     - [Docker volume prune](#docker-volume-prune)
   - [Kubernetes](#kubernetes)
+    - [Minikube start](#minikube-start)
+    - [Kubectl create](#kubectl-create)
     - [Kubectl apply](#kubectl-apply)
+    - [Kubectl edit](#kubectl-edit)
+    - [Kubectl rollout](#kubectl-rollout)
     - [Kubectl delete](#kubectl-delete)
     - [Kubectl get](#kubectl-get)
       - [example](#example)
@@ -245,6 +249,30 @@ if you want to use kubernetes commands you should install kubectl
 
 or you can use minikube to run a local kubernetes cluster
 
+### Minikube start
+
+this command is used to start a local kubernetes cluster
+
+```bash
+minikube start
+```
+
+### Kubectl create
+
+This command is used to create a kubernetes manifest file
+
+```bash
+kubectl create deployment <deployment_name> --image=<image_name> --dry-run=client -o yaml > <manifest_file_path>
+```
+
+or with minikube
+
+```bash
+
+minikube kubectl -- create deployment <deployment_name> --image=<image_name> --dry-run=client -o yaml > <manifest_file_path>
+```
+
+
 ### Kubectl apply
 
 this command is used to apply a kubernetes manifest file
@@ -256,6 +284,50 @@ or with minikube
 ```bash
 minikube kubectl -- apply -f <manifest_file_path>
 ```
+
+### Kubectl edit
+
+this command is used to edit a kubernetes manifest file
+
+```bash
+kubectl edit -f <manifest_file_path>
+```
+or with minikube
+
+```bash
+minikube kubectl -- edit -f <manifest_file_path>
+```
+
+###  Kubectl rollout
+
+this command is used to rollout a kubernetes manifest file
+
+```bash
+
+kubectl rollout restart -f <manifest_file_path>
+```
+
+or with minikube
+
+```bash
+
+minikube kubectl -- rollout restart -f <manifest_file_path>
+```
+
+you can rollout a deployment with the following command
+
+```bash
+kubectl rollout restart deployment <deployment_name>
+```
+
+or with minikube
+
+```bash
+minikube kubectl -- rollout restart deployment <deployment_name>
+```
+
+
+
 
 ### Kubectl delete
 
