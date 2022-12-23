@@ -1,6 +1,22 @@
 ## Home work 2
 
+- [Docker and Kubernetes](#docker-and-kubernetes)
+  - [Project description](#project-description)
+  - [Tools](#tools)
+  - [Docker](#docker)
+    - [Dockerfile](#dockerfile)
+    - [Docker-compose](#docker-compose)
+  - [Kubernetes](#kubernetes)
+    - [Pods](#pods)
+    - [Services](#services)
+    - [Deployments](#deployments)
+    - [Ingress](#ingress)
+  - [Redis](#redis)
+  - [Django](#django)
+
 # Docker and Kubernetes
+
+see the [Command_list](./Command_list.md) file to see all usefull commands for this project.
 
 ## Project description
 to see the project description please visit the following link:
