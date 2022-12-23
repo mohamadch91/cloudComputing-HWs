@@ -16,7 +16,7 @@
 
 # Docker and Kubernetes
 
-see the [Command_list](./Command_list.md) file to see all usefull commands for this project.
+see the [Command list](./Command_list.md) file to see all useful commands for this project.
 
 ## Project description
 to see the project description please visit the following link:

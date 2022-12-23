@@ -1,6 +1,6 @@
-# Docker and kubernetes commands
+# Docker and kubernetes useful commands
 
-- [Docker and kubernetes commands](#docker-and-kubernetes-commands)
+- [Docker and kubernetes useful commands](#docker-and-kubernetes-useful-commands)
   - [Docker](#docker)
     - [Docker build](#docker-build)
     - [Docker tag](#docker-tag)
@@ -46,7 +46,7 @@
 
 ### Docker build
 
-this command is used to build a docker image from a dockerfile
+This command is used to build a docker image from a dockerfile
 
 ```bash
 docker build -t <image_name> <path_to_dockerfile>
@@ -54,7 +54,7 @@ docker build -t <image_name> <path_to_dockerfile>
 
 ### Docker tag
 
-this command is used to tag a docker image
+This command is used to tag a docker image
 
 ```bash
 docker tag <image_name> <new_image_name>
@@ -62,7 +62,7 @@ docker tag <image_name> <new_image_name>
 
 ### Docker push
 
-this command is used to push a docker image to docker hub
+This command is used to push a docker image to docker hub
 
 ```bash
 docker push <image_name>
@@ -70,7 +70,7 @@ docker push <image_name>
 
 ### Docker run
 
-this command is used to run a docker image as a container
+This command is used to run a docker image as a container
 
 ```bash
 docker run -d -p <host_port>:<container_port> <image_name>
@@ -108,7 +108,7 @@ docker run -d -p -it <host_port>:<container_port> -v <host_path>:<container_path
 
 ### Docker exec
 
-this command is used to execute a command in a running container
+This command is used to execute a command in a running container
 
 ```bash
 docker exec -it <container_name> <command>
@@ -116,7 +116,7 @@ docker exec -it <container_name> <command>
 
 ### Docker stop
 
-this command is used to stop a running container
+This command is used to stop a running container
 
 ```bash
 docker stop <container_name>
@@ -124,7 +124,7 @@ docker stop <container_name>
 
 ### Docker rm
 
-this command is used to remove a container
+This command is used to remove a container
 
 ```bash
 docker rm <container_name>
@@ -132,7 +132,7 @@ docker rm <container_name>
 
 ### Docker rmi
 
-this command is used to remove a docker image
+This command is used to remove a docker image
 
 ```bash
 docker rmi <image_name>
@@ -140,7 +140,7 @@ docker rmi <image_name>
 
 ### Docker logs
 
-this command is used to see the logs of a container
+This command is used to see the logs of a container
 
 ```bash
 docker logs <container_name>
@@ -148,7 +148,7 @@ docker logs <container_name>
 
 ### Docker ps
 
-this command is used to see the running containers
+This command is used to see the running containers
 
 ```bash
 docker ps
@@ -156,7 +156,7 @@ docker ps
 
 ### Docker images
 
-this command is used to see the docker images
+This command is used to see the docker images
 
 ```bash
 docker images
@@ -164,7 +164,7 @@ docker images
 
 ### Docker network
 
-this command is used to see the docker networks
+This command is used to see the docker networks
 
 ```bash
 docker network ls
@@ -172,7 +172,7 @@ docker network ls
 
 ### Docker network create
 
-this command is used to create a docker network
+This command is used to create a docker network
 
 ```bash
 docker network create <network_name>
@@ -180,7 +180,7 @@ docker network create <network_name>
 
 ### Docker network connect
 
-this command is used to connect a container to a network
+This command is used to connect a container to a network
 
 ```bash
 docker network connect <network_name> <container_name>
@@ -188,7 +188,7 @@ docker network connect <network_name> <container_name>
 
 ### Docker network disconnect
 
-this command is used to disconnect a container from a network
+This command is used to disconnect a container from a network
 
 ```bash
 
@@ -197,7 +197,7 @@ docker network disconnect <network_name> <container_name>
 
 ### Docker network rm
 
-this command is used to remove a docker network
+This command is used to remove a docker network
 
 ```bash
 docker network rm <network_name>
@@ -205,7 +205,7 @@ docker network rm <network_name>
 
 ### Docker volume
 
-this command is used to see the docker volumes
+This command is used to see the docker volumes
 
 ```bash
 docker volume ls
@@ -213,7 +213,7 @@ docker volume ls
 
 ### Docker volume create
 
-this command is used to create a docker volume
+This command is used to create a docker volume
 
 ```bash
 docker volume create <volume_name>
@@ -221,7 +221,7 @@ docker volume create <volume_name>
 
 ### Docker volume rm
 
-this command is used to remove a docker volume
+This command is used to remove a docker volume
 
 ```bash
 docker volume rm <volume_name>
@@ -229,7 +229,7 @@ docker volume rm <volume_name>
 
 ### Docker volume inspect
 
-this command is used to inspect a docker volume
+This command is used to inspect a docker volume
 
 ```bash
 docker volume inspect <volume_name>
@@ -237,7 +237,7 @@ docker volume inspect <volume_name>
 
 ### Docker volume prune
 
-this command is used to remove all unused volumes
+This command is used to remove all unused volumes
 
 ```bash
 docker volume prune
@@ -251,7 +251,7 @@ or you can use minikube to run a local kubernetes cluster
 
 ### Minikube start
 
-this command is used to start a local kubernetes cluster
+This command is used to start a local kubernetes cluster
 
 ```bash
 minikube start
@@ -275,7 +275,7 @@ minikube kubectl -- create deployment <deployment_name> --image=<image_name> --d
 
 ### Kubectl apply
 
-this command is used to apply a kubernetes manifest file
+This command is used to apply a kubernetes manifest file
 
 ```bash
 kubectl apply -f <manifest_file_path>
@@ -287,7 +287,7 @@ minikube kubectl -- apply -f <manifest_file_path>
 
 ### Kubectl edit
 
-this command is used to edit a kubernetes manifest file
+This command is used to edit a kubernetes manifest file
 
 ```bash
 kubectl edit -f <manifest_file_path>
@@ -300,7 +300,7 @@ minikube kubectl -- edit -f <manifest_file_path>
 
 ###  Kubectl rollout
 
-this command is used to rollout a kubernetes manifest file
+This command is used to rollout a kubernetes manifest file
 
 ```bash
 
@@ -331,7 +331,7 @@ minikube kubectl -- rollout restart deployment <deployment_name>
 
 ### Kubectl delete
 
-this command is used to delete a kubernetes manifest file
+This command is used to delete a kubernetes manifest file
 
 ```bash
 kubectl delete -f <manifest_file_path>
@@ -345,7 +345,7 @@ minikube kubectl -- delete -f <manifest_file_path>
 
 ### Kubectl get
 
-this command is used to get a kubernetes resource
+This command is used to get a kubernetes resource
 
 ```bash
 kubectl get <resource_name>
@@ -365,7 +365,7 @@ kubectl get pods
 
 ### Kubectl describe
 
-this command is used to describe a kubernetes resource
+This command is used to describe a kubernetes resource
 
 ```bash
 kubectl describe <resource_name>
@@ -384,7 +384,7 @@ kubectl describe pod <pod_name>
 
 ### Kubectl logs
 
-this command is used to see the logs of a pod
+This command is used to see the logs of a pod
 
 ```bash
 kubectl logs <pod_name>
@@ -397,7 +397,7 @@ minikube kubectl -- logs <pod_name>
 
 ### Kubectl exec
 
-this command is used to execute a command in a pod
+This command is used to execute a command in a pod
 
 ```bash
 kubectl exec -it <pod_name> <command>
@@ -410,7 +410,7 @@ minikube kubectl -- exec -it <pod_name> <command>
 
 ### Kubectl run
 
-this command is used to run a container as a pod
+This command is used to run a container as a pod
 
 ```bash
 kubectl run <pod_name> --image=<image_name>
@@ -425,7 +425,7 @@ minikube kubectl -- run <pod_name> --image=<image_name>
 
 ### Kubectl expose
 
-this command is used to expose a pod as a service
+This command is used to expose a pod as a service
 
 ```bash
 kubectl expose pod <pod_name> --port=<port> --type=<type>
@@ -439,7 +439,7 @@ minikube kubectl -- expose pod <pod_name> --port=<port> --type=<type>
 
 ### Kubectl port-forward
 
-this command is used to forward a port from a pod to the host
+This command is used to forward a port from a pod to the host
 
 ```bash
 kubectl port-forward <pod_name> <host_port>:<container_port>
