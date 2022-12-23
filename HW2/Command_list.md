@@ -10,6 +10,8 @@
     - [Docker compose](#docker-compose)
       - [Docker compose up](#docker-compose-up)
       - [Docker compose down](#docker-compose-down)
+      - [Docker compose build](#docker-compose-build)
+      - [Docker compose ls](#docker-compose-ls)
     - [Docker stop](#docker-stop)
     - [Docker rm](#docker-rm)
     - [Docker rmi](#docker-rmi)
@@ -133,7 +135,21 @@ This command is used to stop and remove a docker-compose file
 docker compose down
 ```
 
+#### Docker compose build
 
+This command is used to build a image from a Dockerfile
+
+```bash
+docker compose build
+```
+
+#### Docker compose ls
+
+This command is used to see the running containers
+
+```bash
+docker compose ls
+```
 
 
 
