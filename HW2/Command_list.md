@@ -7,6 +7,9 @@
     - [Docker push](#docker-push)
     - [Docker run](#docker-run)
     - [Docker exec](#docker-exec)
+    - [Docker compose](#docker-compose)
+      - [Docker compose up](#docker-compose-up)
+      - [Docker compose down](#docker-compose-down)
     - [Docker stop](#docker-stop)
     - [Docker rm](#docker-rm)
     - [Docker rmi](#docker-rmi)
@@ -113,6 +116,27 @@ This command is used to execute a command in a running container
 ```bash
 docker exec -it <container_name> <command>
 ```
+### Docker compose
+
+#### Docker compose up
+This command is used to run a docker-compose file
+
+```bash
+docker-compose up -d
+```
+
+#### Docker compose down
+
+This command is used to stop and remove a docker-compose file
+
+```bash
+docker-compose down
+```
+
+
+
+
+
 
 ### Docker stop
 
